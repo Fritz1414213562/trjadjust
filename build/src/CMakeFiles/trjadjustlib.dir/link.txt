@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libtrjadjustlib.a CMakeFiles/trjadjustlib.dir/input.cpp.o CMakeFiles/trjadjustlib.dir/coordinate.cpp.o CMakeFiles/trjadjustlib.dir/topology.cpp.o CMakeFiles/trjadjustlib.dir/adjuster.cpp.o CMakeFiles/trjadjustlib.dir/io/dcd_parser.cpp.o CMakeFiles/trjadjustlib.dir/io/dcd_writer.cpp.o CMakeFiles/trjadjustlib.dir/io/topology_parser.cpp.o CMakeFiles/trjadjustlib.dir/util/utility.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libtrjadjustlib.a

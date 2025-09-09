@@ -1,0 +1,43 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/toml11.dir/color.cpp.o"
+  "CMakeFiles/toml11.dir/color.cpp.o.d"
+  "CMakeFiles/toml11.dir/comments.cpp.o"
+  "CMakeFiles/toml11.dir/comments.cpp.o.d"
+  "CMakeFiles/toml11.dir/context.cpp.o"
+  "CMakeFiles/toml11.dir/context.cpp.o.d"
+  "CMakeFiles/toml11.dir/datetime.cpp.o"
+  "CMakeFiles/toml11.dir/datetime.cpp.o.d"
+  "CMakeFiles/toml11.dir/error_info.cpp.o"
+  "CMakeFiles/toml11.dir/error_info.cpp.o.d"
+  "CMakeFiles/toml11.dir/format.cpp.o"
+  "CMakeFiles/toml11.dir/format.cpp.o.d"
+  "CMakeFiles/toml11.dir/literal.cpp.o"
+  "CMakeFiles/toml11.dir/literal.cpp.o.d"
+  "CMakeFiles/toml11.dir/location.cpp.o"
+  "CMakeFiles/toml11.dir/location.cpp.o.d"
+  "CMakeFiles/toml11.dir/parser.cpp.o"
+  "CMakeFiles/toml11.dir/parser.cpp.o.d"
+  "CMakeFiles/toml11.dir/region.cpp.o"
+  "CMakeFiles/toml11.dir/region.cpp.o.d"
+  "CMakeFiles/toml11.dir/scanner.cpp.o"
+  "CMakeFiles/toml11.dir/scanner.cpp.o.d"
+  "CMakeFiles/toml11.dir/serializer.cpp.o"
+  "CMakeFiles/toml11.dir/serializer.cpp.o.d"
+  "CMakeFiles/toml11.dir/skip.cpp.o"
+  "CMakeFiles/toml11.dir/skip.cpp.o.d"
+  "CMakeFiles/toml11.dir/source_location.cpp.o"
+  "CMakeFiles/toml11.dir/source_location.cpp.o.d"
+  "CMakeFiles/toml11.dir/syntax.cpp.o"
+  "CMakeFiles/toml11.dir/syntax.cpp.o.d"
+  "CMakeFiles/toml11.dir/types.cpp.o"
+  "CMakeFiles/toml11.dir/types.cpp.o.d"
+  "CMakeFiles/toml11.dir/value_t.cpp.o"
+  "CMakeFiles/toml11.dir/value_t.cpp.o.d"
+  "libtoml11.a"
+  "libtoml11.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/toml11.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
