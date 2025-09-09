@@ -14,15 +14,15 @@ void DCDWriter::dump(const std::vector<Coordinate>& trajectory)
 	ofs.close();
 }
 
-void DCDWriter::write_1stblock(std::ofstream& ofs, const std::size_t total_step)
+void DCDWriter::write_1stblock(std::ofstream& ofs, const std::size_t total_frame)
 {
 	const std::int32_t block_size(84);
 	Utility::write_as_bytes(ofs, block_size);
 	
 	ofs.write("CORD", 4);
 	
-	const std::int32_t total_frame(std::floor(total_step / step_interval_));
-	Utility::write_as_bytes(ofs, total_frame);
+	const std::int32_t total_frame_i32(total_frame);
+	Utility::write_as_bytes(ofs, total_frame_i32);
 	
 	const std::int32_t index_of_first(0);
 	Utility::write_as_bytes(ofs, index_of_first);
@@ -30,7 +30,7 @@ void DCDWriter::write_1stblock(std::ofstream& ofs, const std::size_t total_step)
 	const std::int32_t save_interval_i32(step_interval_);
 	Utility::write_as_bytes(ofs, save_interval_i32);
 	
-	const std::int32_t total_step_i32(total_step);
+	const std::int32_t total_step_i32(total_frame * step_interval_);
 	Utility::write_as_bytes(ofs, total_step_i32);
 	
 	const std::int32_t total_chains(0);
