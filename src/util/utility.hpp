@@ -3,6 +3,7 @@
 #include <random>
 #include <cstring>
 #include <fstream>
+#include <array>
 
 namespace Utility
 {
