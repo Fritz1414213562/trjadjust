@@ -32,7 +32,7 @@ int main(int argc, char* argv[])
 	boost::timer::progress_display progress(trajectory.size());
 	for (const Coordinate& coordinate : trajectory)
 	{
-		moved_traj.push_back(adjuster.run(coordinate, topology));
+		moved_traj.push_back(adjuster.run(coordinate, topology, input.is_moved_to_center()));
 		++progress;
 	}
 
