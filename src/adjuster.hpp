@@ -13,7 +13,7 @@ class Adjuster
 		Adjuster()  = default;
 		~Adjuster() = default;
 
-		Coordinate run(const Coordinate& coordinate, const Topology& topology) const;
+		Coordinate run(const Coordinate& coordinate, const Topology& topology, const bool is_centered) const;
 	private:
 		float calculate_shift_number(const float& center, const float& wall) const;
 };
