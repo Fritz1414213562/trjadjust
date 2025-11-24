@@ -8,10 +8,11 @@ set(CMAKE_CXX_FLAGS "${TRJADJUST_WARNING_FLAGS} ${TRJADJUST_OPTIMIZATION_FLAGS} 
 message(STATUS "CXX compiler flags are ${CMAKE_CXX_FLAGS}")
 
 add_library(trjadjustlib STATIC
-	input.cpp
+	input_pbcadjust.cpp
+	input_remdextract.cpp
 	coordinate.cpp
 	topology.cpp
-	adjuster.cpp
+	pbcadjuster.cpp
 	)
 target_link_libraries(trjadjustlib PRIVATE
 #	Boost::program_options)

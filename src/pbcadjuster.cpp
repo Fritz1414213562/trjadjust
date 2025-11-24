@@ -1,7 +1,7 @@
-#include "adjuster.hpp"
+#include "pbcadjuster.hpp"
 #include <iostream>
 
-Coordinate Adjuster::run(const Coordinate& coordinate, const Topology& topology, const bool is_centered) const
+Coordinate PBCAdjuster::run(const Coordinate& coordinate, const Topology& topology, const bool is_centered) const
 {
 	if (coordinate.atom_num() != topology.atom_num())
 		throw std::runtime_error(
@@ -45,7 +45,7 @@ Coordinate Adjuster::run(const Coordinate& coordinate, const Topology& topology,
 	return Coordinate(moved_xyz, pbc, coordinate.pbc_angle());
 }
 
-float Adjuster::calculate_shift_number(const float& center, const float& wall) const
+float PBCAdjuster::calculate_shift_number(const float& center, const float& wall) const
 {
 	if (center < 0.0) return calculate_shift_number(center + wall, wall) - 1.0;
 	else if (center > wall) return calculate_shift_number(center - wall, wall) + 1.0;

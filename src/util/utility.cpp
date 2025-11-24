@@ -4,6 +4,7 @@
 #include <random>
 #include <unordered_map>
 #include <stdexcept>
+#include <cctype>
 
 namespace Utility
 {
@@ -30,6 +31,11 @@ std::vector<std::string> split_string(const std::string& s, const char delimiter
 	}
 	if (!buffer.empty()) retval.push_back(buffer);
 	return retval;
+}
+
+bool is_blank_line(const std::string& s)
+{
+	return std::all_of(s.begin(), s.end(), [](unsigned char c) { return std::isspace(c); });
 }
 
 }

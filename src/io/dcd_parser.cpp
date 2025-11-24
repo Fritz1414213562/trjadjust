@@ -11,7 +11,7 @@ std::vector<Coordinate> DCDParser::read(const std::string& filename)
 	// 1st block
 	const std::string& first_block = read_block(ifs);
 	const int frame_num = read_frame_num(first_block);
-	const bool has_unitcell = read_unitcell_flag(first_block);
+	has_unitcell_ = read_unitcell_flag(first_block);
 	// 2nd block (not used)
 	read_block(ifs);
 	// 3rd block
@@ -22,7 +22,7 @@ std::vector<Coordinate> DCDParser::read(const std::string& filename)
 
 	for (std::size_t iframe = 0; iframe < frame_num; ++iframe)
 	{
-		traj.push_back(Coordinate(read_xyz(ifs, atom_num, has_unitcell)));
+		traj.push_back(Coordinate(read_xyz(ifs, atom_num)));
 	}
 	ifs.close();
 
@@ -51,10 +51,10 @@ std::string DCDParser::read_block(std::ifstream& ifs)
 }
 
 Coordinate DCDParser::read_xyz(
-	std::ifstream& ifs, const int atom_num, const bool has_unitcell)
+	std::ifstream& ifs, const int atom_num)
 {
 	std::string pbc_block;
-	if (has_unitcell) pbc_block = read_block(ifs);
+	if (has_unitcell_) pbc_block = read_block(ifs);
 	const std::string&  x_block = read_block(ifs);
 	const std::string&  y_block = read_block(ifs);
 	const std::string&  z_block = read_block(ifs);
@@ -62,7 +62,7 @@ Coordinate DCDParser::read_xyz(
 		read_coordinates(x_block, atom_num),
 		read_coordinates(y_block, atom_num),
 		read_coordinates(z_block, atom_num)};
-	if (has_unitcell)
+	if (has_unitcell_)
 	{
 		const DCDParser::pbc_box_type& pbc_param = read_pbc_box(pbc_block);
 		return Coordinate(xyz, pbc_param.first, pbc_param.second);

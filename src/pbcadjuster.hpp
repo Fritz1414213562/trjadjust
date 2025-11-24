@@ -1,17 +1,17 @@
-#ifndef TRJADJUST_ADJUSTER_HPP
-#define TRJADJUST_ADJUSTER_HPP
+#ifndef TRJADJUST_PBCADJUSTER_HPP
+#define TRJADJUST_PBCADJUSTER_HPP
 
 #include "src/coordinate.hpp"
 #include "src/topology.hpp"
 #include <vector>
 #include <array>
 
-class Adjuster
+class PBCAdjuster
 {
 	using range_type = std::vector<std::pair<std::size_t, std::size_t>>;
 	public:
-		Adjuster()  = default;
-		~Adjuster() = default;
+		PBCAdjuster()  = default;
+		~PBCAdjuster() = default;
 
 		Coordinate run(const Coordinate& coordinate, const Topology& topology, const bool is_centered) const;
 	private:

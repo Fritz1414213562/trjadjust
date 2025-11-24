@@ -20,10 +20,11 @@ class DCDParser {
 		~DCDParser() = default;
 
 		std::vector<Coordinate> read(const std::string& filename);
+		bool has_unitcell() { return has_unitcell_; }
 	private:
 		std::string read_block(std::ifstream& ifs);
 		Coordinate read_xyz(
-			std::ifstream& ifs, const int atom_num, const bool has_unitcell);
+			std::ifstream& ifs, const int atom_num);
 
 		int read_frame_num(const std::string& first_block);
 		int read_atom_num(const std::string& third_block);
@@ -35,6 +36,7 @@ class DCDParser {
 		const int frame_num_index_ = 4;
 		const int unit_cell_index_ = 44;
 		const int atom_num_index_  = 0;
+		bool has_unitcell_ = false;
 
 };
 
