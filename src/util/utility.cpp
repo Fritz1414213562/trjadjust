@@ -5,6 +5,7 @@
 #include <unordered_map>
 #include <stdexcept>
 #include <cctype>
+#include <algorithm>
 
 namespace Utility
 {
